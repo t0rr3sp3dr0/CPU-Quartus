@@ -1,0 +1,20 @@
+module ULA {controle, entradaX, entradaY, saida};
+
+	input wire controle;
+	input wire [3:0] entradaX;
+	input wire [3:0] entradaY;
+	output reg [3:0] saida;
+	
+	parameter dc = 1'b0, add 1'b0;
+	
+	always
+	begin
+		case (controle)
+			dc:
+				saida <= saida;
+			add:
+				saida <= (entradaX + entradaY);
+		endcase
+	end
+
+endmodule

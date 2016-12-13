@@ -1,0 +1,808 @@
+TimeQuest Timing Analyzer report for CPU
+Tue Dec 13 19:19:55 2016
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'Memory:blockMemory|func[0]'
+ 13. Setup: 'PC:blockPC|out[0]'
+ 14. Hold: 'PC:blockPC|out[0]'
+ 15. Hold: 'Memory:blockMemory|func[0]'
+ 16. Hold: 'clk'
+ 17. Minimum Pulse Width: 'clk'
+ 18. Minimum Pulse Width: 'Memory:blockMemory|func[0]'
+ 19. Minimum Pulse Width: 'PC:blockPC|out[0]'
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Setup Transfers
+ 23. Hold Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; CPU                                                ;
+; Device Family      ; MAX V                                              ;
+; Device Name        ; 5M80ZT100C4                                        ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                 ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; Clock Name                 ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                        ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+; clk                        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                        ;
+; Memory:blockMemory|func[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Memory:blockMemory|func[0] } ;
+; PC:blockPC|out[0]          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { PC:blockPC|out[0] }          ;
++----------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Fmax Summary                                                                         ;
++-------------+-----------------+----------------------------+-------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name                 ; Note                    ;
++-------------+-----------------+----------------------------+-------------------------+
+; INF MHz     ; 125.31 MHz      ; PC:blockPC|out[0]          ; limit due to hold check ;
+; 133.19 MHz  ; 133.19 MHz      ; clk                        ;                         ;
+; 8771.93 MHz ; 163.13 MHz      ; Memory:blockMemory|func[0] ; limit due to hold check ;
++-------------+-----------------+----------------------------+-------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------+
+; Setup Summary                                       ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -6.508 ; -74.523       ;
+; Memory:blockMemory|func[0] ; -5.324 ; -30.306       ;
+; PC:blockPC|out[0]          ; -3.647 ; -11.381       ;
++----------------------------+--------+---------------+
+
+
++-----------------------------------------------------+
+; Hold Summary                                        ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; PC:blockPC|out[0]          ; -3.990 ; -9.615        ;
+; Memory:blockMemory|func[0] ; -3.065 ; -13.562       ;
+; clk                        ; -1.230 ; -3.838        ;
++----------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------------+
+; Minimum Pulse Width Summary                         ;
++----------------------------+--------+---------------+
+; Clock                      ; Slack  ; End Point TNS ;
++----------------------------+--------+---------------+
+; clk                        ; -2.289 ; -2.289        ;
+; Memory:blockMemory|func[0] ; 0.500  ; 0.000         ;
+; PC:blockPC|out[0]          ; 0.500  ; 0.000         ;
++----------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                    ;
++--------+-----------------------------+----------------------+----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node              ; Launch Clock               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+----------------------+----------------------------+-------------+--------------+------------+------------+
+; -6.508 ; Register:regX|out[1]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 7.248      ;
+; -6.392 ; UC:blockUC|tX[1]            ; Register:regX|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 4.452      ;
+; -6.368 ; UC:blockUC|tY[1]            ; Register:regY|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 4.424      ;
+; -6.128 ; Register:regX|out[2]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.868      ;
+; -6.053 ; Register:regY|out[1]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.793      ;
+; -6.018 ; Register:regX|out[1]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.758      ;
+; -5.973 ; UC:blockUC|tY[1]            ; Register:regY|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 4.029      ;
+; -5.973 ; UC:blockUC|tY[1]            ; Register:regY|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 4.029      ;
+; -5.928 ; UC:blockUC|tX[1]            ; Register:regZ|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 3.988      ;
+; -5.928 ; UC:blockUC|tX[1]            ; Register:regZ|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 3.988      ;
+; -5.928 ; UC:blockUC|tX[1]            ; Register:regZ|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 3.988      ;
+; -5.926 ; Register:regX|out[2]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.666      ;
+; -5.875 ; UC:blockUC|tY[0]            ; Register:regY|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.687     ; 3.928      ;
+; -5.765 ; UC:blockUC|tX[1]            ; Register:regZ|out[3] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 3.825      ;
+; -5.724 ; UC:blockUC|tY[0]            ; Register:regY|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.687     ; 3.777      ;
+; -5.717 ; UC:blockUC|tY[0]            ; Register:regY|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.687     ; 3.770      ;
+; -5.658 ; Register:regX|out[0]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.398      ;
+; -5.615 ; UC:blockUC|tX[0]            ; Register:regX|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.619     ; 3.736      ;
+; -5.604 ; Register:regX|out[2]        ; Register:regX|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.344      ;
+; -5.563 ; Register:regY|out[1]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.303      ;
+; -5.560 ; UC:blockUC|tULA             ; Register:regY|out[3] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.686     ; 3.614      ;
+; -5.454 ; UC:blockUC|tX[0]            ; Register:regX|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.619     ; 3.575      ;
+; -5.415 ; Register:regY|out[0]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.155      ;
+; -5.367 ; Register:regY|out[2]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 6.107      ;
+; -5.192 ; UC:blockUC|tULA             ; Register:regY|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.686     ; 3.246      ;
+; -5.168 ; Register:regX|out[0]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.908      ;
+; -5.167 ; UC:blockUC|tY[1]            ; Register:regY|out[3] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 3.223      ;
+; -5.099 ; Register:regX|out[1]        ; Register:regX|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.839      ;
+; -5.085 ; Register:regY|out[2]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.825      ;
+; -5.041 ; UC:blockUC|tULA             ; Register:regY|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.686     ; 3.095      ;
+; -5.034 ; UC:blockUC|tULA             ; Register:regY|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.686     ; 3.088      ;
+; -4.998 ; Register:regX|out[1]        ; Register:regY|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.738      ;
+; -4.950 ; UC:blockUC|tX[0]            ; Register:regX|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.619     ; 3.071      ;
+; -4.925 ; Register:regY|out[0]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.665      ;
+; -4.911 ; UC:blockUC|tY[0]            ; Register:regY|out[3] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.687     ; 2.964      ;
+; -4.840 ; Register:regX|out[0]        ; Register:regY|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.580      ;
+; -4.839 ; UC:blockUC|tZ[0]            ; Register:regZ|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 2.895      ;
+; -4.839 ; UC:blockUC|tZ[0]            ; Register:regZ|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 2.895      ;
+; -4.839 ; UC:blockUC|tZ[0]            ; Register:regZ|out[0] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 2.895      ;
+; -4.785 ; UC:blockUC|tX[1]            ; Register:regX|out[2] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 2.845      ;
+; -4.783 ; UC:blockUC|tX[1]            ; Register:regX|out[1] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.680     ; 2.843      ;
+; -4.597 ; Register:regY|out[0]        ; Register:regY|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.337      ;
+; -4.463 ; Register:regY|out[1]        ; Register:regY|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.203      ;
+; -4.388 ; Register:regX|out[0]        ; Register:regY|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 5.128      ;
+; -4.248 ; Register:regY|out[2]        ; Register:regZ|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.988      ;
+; -4.225 ; Register:regY|out[0]        ; Register:regY|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.965      ;
+; -3.806 ; UC:blockUC|tZ[0]            ; Register:regZ|out[3] ; Memory:blockMemory|func[0] ; clk         ; 1.000        ; -2.684     ; 1.862      ;
+; -3.717 ; Register:regX|out[1]        ; Register:regX|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.457      ;
+; -3.706 ; Register:regX|out[2]        ; Register:regX|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.446      ;
+; -3.686 ; Register:regY|out[0]        ; Register:regZ|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.426      ;
+; -3.678 ; Register:regX|out[0]        ; Register:regX|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.418      ;
+; -3.675 ; Register:regY|out[3]        ; Register:regZ|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 4.415      ;
+; -3.134 ; Memory:blockMemory|value[1] ; Register:regX|out[1] ; PC:blockPC|out[0]          ; clk         ; 1.000        ; -2.988     ; 0.886      ;
+; -3.131 ; Memory:blockMemory|value[2] ; Register:regX|out[2] ; PC:blockPC|out[0]          ; clk         ; 1.000        ; -2.985     ; 0.886      ;
+; -3.128 ; Register:regY|out[3]        ; Register:regY|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.868      ;
+; -2.994 ; Register:regY|out[1]        ; Register:regZ|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.734      ;
+; -2.698 ; Register:regY|out[3]        ; Register:regY|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.563 ; Register:regZ|out[3]        ; Register:regZ|out[2] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.303      ;
+; -2.556 ; Register:regZ|out[3]        ; Register:regZ|out[3] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.296      ;
+; -2.317 ; PC:blockPC|out[2]           ; PC:blockPC|out[0]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.057      ;
+; -2.316 ; PC:blockPC|out[2]           ; PC:blockPC|out[2]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.056      ;
+; -2.313 ; Register:regY|out[2]        ; Register:regY|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.053      ;
+; -2.285 ; Register:regZ|out[2]        ; Register:regZ|out[1] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.025      ;
+; -2.264 ; Register:regZ|out[1]        ; Register:regZ|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 3.004      ;
+; -2.211 ; PC:blockPC|out[1]           ; PC:blockPC|out[3]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.951      ;
+; -2.196 ; PC:blockPC|out[1]           ; PC:blockPC|out[1]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.936      ;
+; -2.108 ; Register:regY|out[1]        ; Register:regY|out[0] ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.848      ;
+; -1.891 ; PC:blockPC|out[2]           ; PC:blockPC|out[1]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.631      ;
+; -1.879 ; PC:blockPC|out[2]           ; PC:blockPC|out[3]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.619      ;
+; -1.662 ; PC:blockPC|out[3]           ; PC:blockPC|out[1]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.402      ;
+; -1.658 ; PC:blockPC|out[3]           ; PC:blockPC|out[0]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.398      ;
+; -1.657 ; PC:blockPC|out[3]           ; PC:blockPC|out[2]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.397      ;
+; -1.655 ; PC:blockPC|out[3]           ; PC:blockPC|out[3]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.395      ;
+; -1.391 ; PC:blockPC|out[1]           ; PC:blockPC|out[0]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.131      ;
+; -1.391 ; PC:blockPC|out[1]           ; PC:blockPC|out[2]    ; clk                        ; clk         ; 1.000        ; 0.000      ; 2.131      ;
+; 0.853  ; PC:blockPC|out[0]           ; PC:blockPC|out[1]    ; PC:blockPC|out[0]          ; clk         ; 0.500        ; 3.716      ; 3.483      ;
+; 0.857  ; PC:blockPC|out[0]           ; PC:blockPC|out[3]    ; PC:blockPC|out[0]          ; clk         ; 0.500        ; 3.716      ; 3.479      ;
+; 1.353  ; PC:blockPC|out[0]           ; PC:blockPC|out[1]    ; PC:blockPC|out[0]          ; clk         ; 1.000        ; 3.716      ; 3.483      ;
+; 1.357  ; PC:blockPC|out[0]           ; PC:blockPC|out[3]    ; PC:blockPC|out[0]          ; clk         ; 1.000        ; 3.716      ; 3.479      ;
+; 1.396  ; PC:blockPC|out[0]           ; PC:blockPC|out[0]    ; PC:blockPC|out[0]          ; clk         ; 0.500        ; 3.716      ; 2.940      ;
+; 1.396  ; PC:blockPC|out[0]           ; PC:blockPC|out[2]    ; PC:blockPC|out[0]          ; clk         ; 0.500        ; 3.716      ; 2.940      ;
+; 1.896  ; PC:blockPC|out[0]           ; PC:blockPC|out[0]    ; PC:blockPC|out[0]          ; clk         ; 1.000        ; 3.716      ; 2.940      ;
+; 1.896  ; PC:blockPC|out[0]           ; PC:blockPC|out[2]    ; PC:blockPC|out[0]          ; clk         ; 1.000        ; 3.716      ; 2.940      ;
++--------+-----------------------------+----------------------+----------------------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'Memory:blockMemory|func[0]'                                                                                                                       ;
++--------+----------------------------+------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node          ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+------------------+----------------------------+----------------------------+--------------+------------+------------+
+; -5.324 ; Memory:blockMemory|func[1] ; UC:blockUC|tULA  ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.357     ; 3.363      ;
+; -5.293 ; Memory:blockMemory|func[1] ; UC:blockUC|tZ[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.359     ; 3.332      ;
+; -5.274 ; Memory:blockMemory|func[1] ; UC:blockUC|tX[1] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.363     ; 3.334      ;
+; -5.239 ; Memory:blockMemory|func[1] ; UC:blockUC|tY[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.356     ; 3.339      ;
+; -4.877 ; Memory:blockMemory|func[1] ; UC:blockUC|tX[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.424     ; 2.938      ;
+; -4.852 ; Memory:blockMemory|func[2] ; UC:blockUC|tULA  ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.353     ; 2.895      ;
+; -4.819 ; Memory:blockMemory|func[2] ; UC:blockUC|tZ[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.355     ; 2.862      ;
+; -4.776 ; Memory:blockMemory|func[2] ; UC:blockUC|tY[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.352     ; 2.880      ;
+; -4.411 ; Memory:blockMemory|func[2] ; UC:blockUC|tX[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.420     ; 2.476      ;
+; -4.299 ; Memory:blockMemory|func[1] ; UC:blockUC|tY[1] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.359     ; 2.174      ;
+; -4.098 ; Memory:blockMemory|func[2] ; UC:blockUC|tX[1] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 1.000        ; -0.359     ; 2.162      ;
+; 0.443  ; Memory:blockMemory|func[0] ; UC:blockUC|tZ[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.500        ; 6.400      ; 3.855      ;
+; 0.462  ; Memory:blockMemory|func[0] ; UC:blockUC|tX[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.500        ; 6.396      ; 3.857      ;
+; 0.496  ; Memory:blockMemory|func[0] ; UC:blockUC|tY[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.500        ; 6.403      ; 3.863      ;
+; 0.799  ; Memory:blockMemory|func[0] ; UC:blockUC|tY[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.500        ; 6.400      ; 3.335      ;
+; 0.858  ; Memory:blockMemory|func[0] ; UC:blockUC|tX[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.500        ; 6.335      ; 3.462      ;
+; 0.943  ; Memory:blockMemory|func[0] ; UC:blockUC|tZ[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 1.000        ; 6.400      ; 3.855      ;
+; 0.962  ; Memory:blockMemory|func[0] ; UC:blockUC|tX[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 1.000        ; 6.396      ; 3.857      ;
+; 0.996  ; Memory:blockMemory|func[0] ; UC:blockUC|tY[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 1.000        ; 6.403      ; 3.863      ;
+; 1.299  ; Memory:blockMemory|func[0] ; UC:blockUC|tY[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 1.000        ; 6.400      ; 3.335      ;
+; 1.358  ; Memory:blockMemory|func[0] ; UC:blockUC|tX[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 1.000        ; 6.335      ; 3.462      ;
++--------+----------------------------+------------------+----------------------------+----------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'PC:blockPC|out[0]'                                                                                                                ;
++--------+-------------------+-----------------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node                     ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-----------------------------+-------------------+-------------------+--------------+------------+------------+
+; -3.647 ; PC:blockPC|out[2] ; Memory:blockMemory|func[2]  ; clk               ; PC:blockPC|out[0] ; 0.500        ; 3.039      ; 3.184      ;
+; -2.892 ; PC:blockPC|out[1] ; Memory:blockMemory|value[1] ; clk               ; PC:blockPC|out[0] ; 0.500        ; 2.988      ; 4.213      ;
+; -2.708 ; PC:blockPC|out[1] ; Memory:blockMemory|value[2] ; clk               ; PC:blockPC|out[0] ; 0.500        ; 2.985      ; 3.149      ;
+; -2.594 ; PC:blockPC|out[2] ; Memory:blockMemory|value[1] ; clk               ; PC:blockPC|out[0] ; 0.500        ; 2.988      ; 3.915      ;
+; -2.407 ; PC:blockPC|out[2] ; Memory:blockMemory|value[2] ; clk               ; PC:blockPC|out[0] ; 0.500        ; 2.985      ; 2.848      ;
+; -2.134 ; PC:blockPC|out[1] ; Memory:blockMemory|func[1]  ; clk               ; PC:blockPC|out[0] ; 0.500        ; 3.043      ; 2.975      ;
+; 0.716  ; PC:blockPC|out[0] ; Memory:blockMemory|func[0]  ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 0.500        ; 6.018      ; 3.700      ;
+; 1.216  ; PC:blockPC|out[0] ; Memory:blockMemory|func[0]  ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 1.000        ; 6.018      ; 3.700      ;
+; 1.260  ; PC:blockPC|out[0] ; Memory:blockMemory|value[1] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 0.500        ; 6.704      ; 4.157      ;
+; 1.446  ; PC:blockPC|out[0] ; Memory:blockMemory|value[2] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 0.500        ; 6.701      ; 3.091      ;
+; 1.760  ; PC:blockPC|out[0] ; Memory:blockMemory|value[1] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 1.000        ; 6.704      ; 4.157      ;
+; 1.946  ; PC:blockPC|out[0] ; Memory:blockMemory|value[2] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 1.000        ; 6.701      ; 3.091      ;
++--------+-------------------+-----------------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'PC:blockPC|out[0]'                                                                                                                 ;
++--------+-------------------+-----------------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node                     ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-----------------------------+-------------------+-------------------+--------------+------------+------------+
+; -3.990 ; PC:blockPC|out[0] ; Memory:blockMemory|value[2] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 0.000        ; 6.701      ; 3.091      ;
+; -3.490 ; PC:blockPC|out[0] ; Memory:blockMemory|value[2] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; -0.500       ; 6.701      ; 3.091      ;
+; -2.927 ; PC:blockPC|out[0] ; Memory:blockMemory|value[1] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 0.000        ; 6.704      ; 4.157      ;
+; -2.698 ; PC:blockPC|out[0] ; Memory:blockMemory|func[0]  ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; 0.000        ; 6.018      ; 3.700      ;
+; -2.427 ; PC:blockPC|out[0] ; Memory:blockMemory|value[1] ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; -0.500       ; 6.704      ; 4.157      ;
+; -2.198 ; PC:blockPC|out[0] ; Memory:blockMemory|func[0]  ; PC:blockPC|out[0] ; PC:blockPC|out[0] ; -0.500       ; 6.018      ; 3.700      ;
+; 0.363  ; PC:blockPC|out[2] ; Memory:blockMemory|value[2] ; clk               ; PC:blockPC|out[0] ; -0.500       ; 2.985      ; 2.848      ;
+; 0.432  ; PC:blockPC|out[1] ; Memory:blockMemory|func[1]  ; clk               ; PC:blockPC|out[0] ; -0.500       ; 3.043      ; 2.975      ;
+; 0.645  ; PC:blockPC|out[2] ; Memory:blockMemory|func[2]  ; clk               ; PC:blockPC|out[0] ; -0.500       ; 3.039      ; 3.184      ;
+; 0.664  ; PC:blockPC|out[1] ; Memory:blockMemory|value[2] ; clk               ; PC:blockPC|out[0] ; -0.500       ; 2.985      ; 3.149      ;
+; 1.427  ; PC:blockPC|out[2] ; Memory:blockMemory|value[1] ; clk               ; PC:blockPC|out[0] ; -0.500       ; 2.988      ; 3.915      ;
+; 1.725  ; PC:blockPC|out[1] ; Memory:blockMemory|value[1] ; clk               ; PC:blockPC|out[0] ; -0.500       ; 2.988      ; 4.213      ;
++--------+-------------------+-----------------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'Memory:blockMemory|func[0]'                                                                                                                        ;
++--------+----------------------------+------------------+----------------------------+----------------------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node          ; Launch Clock               ; Latch Clock                ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+------------------+----------------------------+----------------------------+--------------+------------+------------+
+; -3.065 ; Memory:blockMemory|func[0] ; UC:blockUC|tY[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.000        ; 6.400      ; 3.335      ;
+; -2.873 ; Memory:blockMemory|func[0] ; UC:blockUC|tX[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.000        ; 6.335      ; 3.462      ;
+; -2.565 ; Memory:blockMemory|func[0] ; UC:blockUC|tY[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; -0.500       ; 6.400      ; 3.335      ;
+; -2.545 ; Memory:blockMemory|func[0] ; UC:blockUC|tZ[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.000        ; 6.400      ; 3.855      ;
+; -2.540 ; Memory:blockMemory|func[0] ; UC:blockUC|tY[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.000        ; 6.403      ; 3.863      ;
+; -2.539 ; Memory:blockMemory|func[0] ; UC:blockUC|tX[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 0.000        ; 6.396      ; 3.857      ;
+; -2.373 ; Memory:blockMemory|func[0] ; UC:blockUC|tX[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; -0.500       ; 6.335      ; 3.462      ;
+; -2.045 ; Memory:blockMemory|func[0] ; UC:blockUC|tZ[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; -0.500       ; 6.400      ; 3.855      ;
+; -2.040 ; Memory:blockMemory|func[0] ; UC:blockUC|tY[0] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; -0.500       ; 6.403      ; 3.863      ;
+; -2.039 ; Memory:blockMemory|func[0] ; UC:blockUC|tX[1] ; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; -0.500       ; 6.396      ; 3.857      ;
+; 2.521  ; Memory:blockMemory|func[2] ; UC:blockUC|tX[1] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.359     ; 2.162      ;
+; 2.533  ; Memory:blockMemory|func[1] ; UC:blockUC|tY[1] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.359     ; 2.174      ;
+; 2.896  ; Memory:blockMemory|func[2] ; UC:blockUC|tX[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.420     ; 2.476      ;
+; 3.217  ; Memory:blockMemory|func[2] ; UC:blockUC|tZ[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.355     ; 2.862      ;
+; 3.232  ; Memory:blockMemory|func[2] ; UC:blockUC|tY[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.352     ; 2.880      ;
+; 3.248  ; Memory:blockMemory|func[2] ; UC:blockUC|tULA  ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.353     ; 2.895      ;
+; 3.362  ; Memory:blockMemory|func[1] ; UC:blockUC|tX[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.424     ; 2.938      ;
+; 3.691  ; Memory:blockMemory|func[1] ; UC:blockUC|tZ[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.359     ; 3.332      ;
+; 3.695  ; Memory:blockMemory|func[1] ; UC:blockUC|tY[0] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.356     ; 3.339      ;
+; 3.697  ; Memory:blockMemory|func[1] ; UC:blockUC|tX[1] ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.363     ; 3.334      ;
+; 3.720  ; Memory:blockMemory|func[1] ; UC:blockUC|tULA  ; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 0.000        ; -0.357     ; 3.363      ;
++--------+----------------------------+------------------+----------------------------+----------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                     ;
++--------+-----------------------------+----------------------+----------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node              ; Launch Clock               ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+----------------------+----------------------------+-------------+--------------+------------+------------+
+; -1.230 ; PC:blockPC|out[0]           ; PC:blockPC|out[0]    ; PC:blockPC|out[0]          ; clk         ; 0.000        ; 3.716      ; 2.940      ;
+; -1.230 ; PC:blockPC|out[0]           ; PC:blockPC|out[2]    ; PC:blockPC|out[0]          ; clk         ; 0.000        ; 3.716      ; 2.940      ;
+; -0.730 ; PC:blockPC|out[0]           ; PC:blockPC|out[0]    ; PC:blockPC|out[0]          ; clk         ; -0.500       ; 3.716      ; 2.940      ;
+; -0.730 ; PC:blockPC|out[0]           ; PC:blockPC|out[2]    ; PC:blockPC|out[0]          ; clk         ; -0.500       ; 3.716      ; 2.940      ;
+; -0.691 ; PC:blockPC|out[0]           ; PC:blockPC|out[3]    ; PC:blockPC|out[0]          ; clk         ; 0.000        ; 3.716      ; 3.479      ;
+; -0.687 ; PC:blockPC|out[0]           ; PC:blockPC|out[1]    ; PC:blockPC|out[0]          ; clk         ; 0.000        ; 3.716      ; 3.483      ;
+; -0.191 ; PC:blockPC|out[0]           ; PC:blockPC|out[3]    ; PC:blockPC|out[0]          ; clk         ; -0.500       ; 3.716      ; 3.479      ;
+; -0.187 ; PC:blockPC|out[0]           ; PC:blockPC|out[1]    ; PC:blockPC|out[0]          ; clk         ; -0.500       ; 3.716      ; 3.483      ;
+; 2.057  ; PC:blockPC|out[1]           ; PC:blockPC|out[0]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 2.057  ; PC:blockPC|out[1]           ; PC:blockPC|out[2]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.131      ;
+; 2.321  ; PC:blockPC|out[3]           ; PC:blockPC|out[3]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.395      ;
+; 2.323  ; PC:blockPC|out[3]           ; PC:blockPC|out[2]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.397      ;
+; 2.324  ; PC:blockPC|out[3]           ; PC:blockPC|out[0]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.398      ;
+; 2.328  ; PC:blockPC|out[3]           ; PC:blockPC|out[1]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.402      ;
+; 2.545  ; PC:blockPC|out[2]           ; PC:blockPC|out[3]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.619      ;
+; 2.557  ; PC:blockPC|out[2]           ; PC:blockPC|out[1]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.631      ;
+; 2.774  ; Register:regY|out[1]        ; Register:regY|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.848      ;
+; 2.846  ; Register:regY|out[3]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.920      ;
+; 2.862  ; PC:blockPC|out[1]           ; PC:blockPC|out[1]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.936      ;
+; 2.877  ; PC:blockPC|out[1]           ; PC:blockPC|out[3]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 2.951      ;
+; 2.930  ; Register:regZ|out[1]        ; Register:regZ|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.004      ;
+; 2.951  ; Register:regZ|out[2]        ; Register:regZ|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.025      ;
+; 2.979  ; Register:regY|out[2]        ; Register:regY|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.053      ;
+; 2.982  ; PC:blockPC|out[2]           ; PC:blockPC|out[2]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.056      ;
+; 2.983  ; PC:blockPC|out[2]           ; PC:blockPC|out[0]    ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.057      ;
+; 3.222  ; Register:regZ|out[3]        ; Register:regZ|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.296      ;
+; 3.229  ; Register:regZ|out[3]        ; Register:regZ|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.303      ;
+; 3.364  ; Register:regY|out[3]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.438      ;
+; 3.660  ; Register:regY|out[1]        ; Register:regZ|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 3.734      ;
+; 3.797  ; Memory:blockMemory|value[2] ; Register:regX|out[2] ; PC:blockPC|out[0]          ; clk         ; 0.000        ; -2.985     ; 0.886      ;
+; 3.800  ; Memory:blockMemory|value[1] ; Register:regX|out[1] ; PC:blockPC|out[0]          ; clk         ; 0.000        ; -2.988     ; 0.886      ;
+; 4.341  ; Register:regY|out[3]        ; Register:regZ|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.415      ;
+; 4.344  ; Register:regX|out[0]        ; Register:regX|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.418      ;
+; 4.352  ; Register:regY|out[0]        ; Register:regZ|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.426      ;
+; 4.372  ; Register:regX|out[2]        ; Register:regX|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.446      ;
+; 4.383  ; Register:regX|out[1]        ; Register:regX|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.457      ;
+; 4.467  ; UC:blockUC|tZ[0]            ; Register:regZ|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 1.857      ;
+; 4.472  ; UC:blockUC|tZ[0]            ; Register:regZ|out[3] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 1.862      ;
+; 4.891  ; Register:regY|out[0]        ; Register:regY|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.965      ;
+; 4.914  ; Register:regY|out[2]        ; Register:regZ|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 4.988      ;
+; 5.027  ; UC:blockUC|tZ[0]            ; Register:regZ|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 2.417      ;
+; 5.029  ; UC:blockUC|tZ[0]            ; Register:regZ|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 2.419      ;
+; 5.054  ; Register:regX|out[0]        ; Register:regY|out[0] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.128      ;
+; 5.129  ; Register:regY|out[1]        ; Register:regY|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.203      ;
+; 5.237  ; Register:regY|out[0]        ; Register:regY|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.311      ;
+; 5.382  ; UC:blockUC|tX[1]            ; Register:regX|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 2.776      ;
+; 5.451  ; UC:blockUC|tX[1]            ; Register:regX|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 2.845      ;
+; 5.481  ; Register:regX|out[0]        ; Register:regY|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.555      ;
+; 5.541  ; Register:regY|out[0]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.615      ;
+; 5.555  ; UC:blockUC|tY[0]            ; Register:regY|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.687     ; 2.942      ;
+; 5.555  ; UC:blockUC|tY[0]            ; Register:regY|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.687     ; 2.942      ;
+; 5.577  ; UC:blockUC|tY[0]            ; Register:regY|out[3] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.687     ; 2.964      ;
+; 5.614  ; UC:blockUC|tX[1]            ; Register:regZ|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 3.008      ;
+; 5.616  ; UC:blockUC|tX[0]            ; Register:regX|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.619     ; 3.071      ;
+; 5.616  ; UC:blockUC|tX[1]            ; Register:regZ|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 3.010      ;
+; 5.664  ; Register:regX|out[1]        ; Register:regY|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.738      ;
+; 5.700  ; UC:blockUC|tULA             ; Register:regY|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.686     ; 3.088      ;
+; 5.707  ; UC:blockUC|tULA             ; Register:regY|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.686     ; 3.095      ;
+; 5.751  ; Register:regY|out[2]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.825      ;
+; 5.765  ; Register:regX|out[1]        ; Register:regX|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.839      ;
+; 5.785  ; Register:regX|out[0]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 5.859      ;
+; 5.833  ; UC:blockUC|tY[1]            ; Register:regY|out[3] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 3.223      ;
+; 5.858  ; UC:blockUC|tULA             ; Register:regY|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.686     ; 3.246      ;
+; 5.950  ; UC:blockUC|tY[0]            ; Register:regY|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.687     ; 3.337      ;
+; 6.008  ; Register:regY|out[2]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.082      ;
+; 6.043  ; Register:regY|out[0]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.117      ;
+; 6.075  ; UC:blockUC|tY[1]            ; Register:regY|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 3.465      ;
+; 6.082  ; UC:blockUC|tY[1]            ; Register:regY|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 3.472      ;
+; 6.120  ; UC:blockUC|tX[0]            ; Register:regX|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.619     ; 3.575      ;
+; 6.192  ; Register:regY|out[1]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.266      ;
+; 6.226  ; UC:blockUC|tULA             ; Register:regY|out[3] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.686     ; 3.614      ;
+; 6.233  ; UC:blockUC|tY[1]            ; Register:regY|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.684     ; 3.623      ;
+; 6.270  ; Register:regX|out[2]        ; Register:regX|out[1] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.344      ;
+; 6.281  ; UC:blockUC|tX[0]            ; Register:regX|out[1] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.619     ; 3.736      ;
+; 6.287  ; Register:regX|out[0]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.361      ;
+; 6.431  ; UC:blockUC|tX[1]            ; Register:regZ|out[3] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 3.825      ;
+; 6.436  ; UC:blockUC|tX[1]            ; Register:regZ|out[2] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 3.830      ;
+; 6.592  ; Register:regX|out[2]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.666      ;
+; 6.646  ; Register:regX|out[1]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.720      ;
+; 6.694  ; Register:regY|out[1]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.768      ;
+; 6.768  ; Register:regX|out[2]        ; Register:regY|out[3] ; clk                        ; clk         ; 0.000        ; 0.000      ; 6.842      ;
+; 7.058  ; UC:blockUC|tX[1]            ; Register:regX|out[0] ; Memory:blockMemory|func[0] ; clk         ; 0.000        ; -2.680     ; 4.452      ;
+; 7.148  ; Register:regX|out[1]        ; Register:regY|out[2] ; clk                        ; clk         ; 0.000        ; 0.000      ; 7.222      ;
++--------+-----------------------------+----------------------+----------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target               ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk                  ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Fall       ; PC:blockPC|out[0]    ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Fall       ; PC:blockPC|out[0]    ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Fall       ; PC:blockPC|out[1]    ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Fall       ; PC:blockPC|out[1]    ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Fall       ; PC:blockPC|out[2]    ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Fall       ; PC:blockPC|out[2]    ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Fall       ; PC:blockPC|out[3]    ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Fall       ; PC:blockPC|out[3]    ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regX|out[0] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regX|out[0] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regX|out[1] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regX|out[1] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regX|out[2] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regX|out[2] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regY|out[0] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regY|out[0] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regY|out[1] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regY|out[1] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regY|out[2] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regY|out[2] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regY|out[3] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regY|out[3] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regZ|out[0] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regZ|out[0] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regZ|out[1] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regZ|out[1] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regZ|out[2] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regZ|out[2] ;
+; 0.247  ; 0.500        ; 0.253          ; High Pulse Width ; clk   ; Rise       ; Register:regZ|out[3] ;
+; 0.247  ; 0.500        ; 0.253          ; Low Pulse Width  ; clk   ; Rise       ; Register:regZ|out[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; blockPC|out[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; blockPC|out[0]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; blockPC|out[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; blockPC|out[1]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; blockPC|out[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; blockPC|out[2]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; blockPC|out[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; blockPC|out[3]|clk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regX|out[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regX|out[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regX|out[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regX|out[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regX|out[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regX|out[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regY|out[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regY|out[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regY|out[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regY|out[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regY|out[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regY|out[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regY|out[3]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regY|out[3]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regZ|out[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regZ|out[0]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regZ|out[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regZ|out[1]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regZ|out[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regZ|out[2]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; regZ|out[3]|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; regZ|out[3]|clk      ;
++--------+--------------+----------------+------------------+-------+------------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'Memory:blockMemory|func[0]'                                                                                ;
++-------+--------------+----------------+------------------+----------------------------+------------+-----------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                      ; Clock Edge ; Target                      ;
++-------+--------------+----------------+------------------+----------------------------+------------+-----------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tULA             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tULA             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tX[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tX[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tX[1]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tX[1]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tY[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tY[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tY[1]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tY[1]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tZ[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; UC:blockUC|tZ[0]            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockMemory|func[0]|combout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockMemory|func[0]|combout ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|Decoder0~0|combout  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|Decoder0~0|combout  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|Decoder0~0|datad    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|Decoder0~0|datad    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tULA|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tULA|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tX[0]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tX[0]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tX[1]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tX[1]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tY[0]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tY[0]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tY[1]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tY[1]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tZ[0]|datac         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; Memory:blockMemory|func[0] ; Rise       ; blockUC|tZ[0]|datac         ;
++-------+--------------+----------------+------------------+----------------------------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'PC:blockPC|out[0]'                                                                                ;
++-------+--------------+----------------+------------------+-------------------+------------+-----------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock             ; Clock Edge ; Target                      ;
++-------+--------------+----------------+------------------+-------------------+------------+-----------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|func[0]  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|func[0]  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|func[1]  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|func[1]  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|func[2]  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|func[2]  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|value[1] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|value[1] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|value[2] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; Memory:blockMemory|value[2] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|Mux5~0|combout  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|Mux5~0|combout  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|Mux5~0|datad    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|Mux5~0|datad    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|func[0]|datad   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|func[0]|datad   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|func[1]|datab   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|func[1]|datab   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|func[2]|datab   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|func[2]|datab   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|value[1]|datab  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|value[1]|datab  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockMemory|value[2]|datab  ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockMemory|value[2]|datab  ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; PC:blockPC|out[0] ; Rise       ; blockPC|out[0]|regout       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; PC:blockPC|out[0] ; Rise       ; blockPC|out[0]|regout       ;
++-------+--------------+----------------+------------------+-------------------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                       ;
++--------------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port          ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------------+----------------------------+--------+--------+------------+----------------------------+
+; memoryFunction[*]  ; Memory:blockMemory|func[0] ; 4.825  ;        ; Rise       ; Memory:blockMemory|func[0] ;
+;  memoryFunction[0] ; Memory:blockMemory|func[0] ; 4.825  ;        ; Rise       ; Memory:blockMemory|func[0] ;
+; outULA[*]          ; Memory:blockMemory|func[0] ; 13.198 ; 13.198 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[0]         ; Memory:blockMemory|func[0] ; 11.714 ; 11.714 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[1]         ; Memory:blockMemory|func[0] ; 12.344 ; 12.344 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[2]         ; Memory:blockMemory|func[0] ; 11.538 ; 11.538 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[3]         ; Memory:blockMemory|func[0] ; 13.198 ; 13.198 ; Rise       ; Memory:blockMemory|func[0] ;
+; tULA               ; Memory:blockMemory|func[0] ; 11.072 ; 11.072 ; Rise       ; Memory:blockMemory|func[0] ;
+; tX[*]              ; Memory:blockMemory|func[0] ; 11.237 ; 11.237 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tX[0]             ; Memory:blockMemory|func[0] ; 10.370 ; 10.370 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tX[1]             ; Memory:blockMemory|func[0] ; 11.237 ; 11.237 ; Rise       ; Memory:blockMemory|func[0] ;
+; tY[*]              ; Memory:blockMemory|func[0] ; 11.438 ; 11.438 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tY[0]             ; Memory:blockMemory|func[0] ; 11.232 ; 11.232 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tY[1]             ; Memory:blockMemory|func[0] ; 11.438 ; 11.438 ; Rise       ; Memory:blockMemory|func[0] ;
+; tZ[*]              ; Memory:blockMemory|func[0] ; 11.720 ; 11.720 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tZ[0]             ; Memory:blockMemory|func[0] ; 10.445 ; 10.445 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tZ[1]             ; Memory:blockMemory|func[0] ; 11.720 ; 11.720 ; Rise       ; Memory:blockMemory|func[0] ;
+; memoryFunction[*]  ; Memory:blockMemory|func[0] ;        ; 4.825  ; Fall       ; Memory:blockMemory|func[0] ;
+;  memoryFunction[0] ; Memory:blockMemory|func[0] ;        ; 4.825  ; Fall       ; Memory:blockMemory|func[0] ;
+; memoryFunction[*]  ; PC:blockPC|out[0]          ; 11.719 ; 11.719 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryFunction[1] ; PC:blockPC|out[0]          ; 11.644 ; 11.644 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryFunction[2] ; PC:blockPC|out[0]          ; 11.719 ; 11.719 ; Rise       ; PC:blockPC|out[0]          ;
+; memoryValue[*]     ; PC:blockPC|out[0]          ; 10.805 ; 10.805 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryValue[1]    ; PC:blockPC|out[0]          ; 10.764 ; 10.764 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryValue[2]    ; PC:blockPC|out[0]          ; 10.805 ; 10.805 ; Rise       ; PC:blockPC|out[0]          ;
+; outPC[*]           ; PC:blockPC|out[0]          ; 4.153  ;        ; Rise       ; PC:blockPC|out[0]          ;
+;  outPC[0]          ; PC:blockPC|out[0]          ; 4.153  ;        ; Rise       ; PC:blockPC|out[0]          ;
+; outPC[*]           ; PC:blockPC|out[0]          ;        ; 4.153  ; Fall       ; PC:blockPC|out[0]          ;
+;  outPC[0]          ; PC:blockPC|out[0]          ;        ; 4.153  ; Fall       ; PC:blockPC|out[0]          ;
+; outULA[*]          ; clk                        ; 15.081 ; 15.081 ; Rise       ; clk                        ;
+;  outULA[0]         ; clk                        ; 12.488 ; 12.488 ; Rise       ; clk                        ;
+;  outULA[1]         ; clk                        ; 13.053 ; 13.053 ; Rise       ; clk                        ;
+;  outULA[2]         ; clk                        ; 15.081 ; 15.081 ; Rise       ; clk                        ;
+;  outULA[3]         ; clk                        ; 13.766 ; 13.766 ; Rise       ; clk                        ;
+; outX[*]            ; clk                        ; 8.424  ; 8.424  ; Rise       ; clk                        ;
+;  outX[0]           ; clk                        ; 8.424  ; 8.424  ; Rise       ; clk                        ;
+;  outX[1]           ; clk                        ; 8.065  ; 8.065  ; Rise       ; clk                        ;
+;  outX[2]           ; clk                        ; 8.065  ; 8.065  ; Rise       ; clk                        ;
+; outY[*]            ; clk                        ; 9.974  ; 9.974  ; Rise       ; clk                        ;
+;  outY[0]           ; clk                        ; 9.764  ; 9.764  ; Rise       ; clk                        ;
+;  outY[1]           ; clk                        ; 9.974  ; 9.974  ; Rise       ; clk                        ;
+;  outY[2]           ; clk                        ; 8.138  ; 8.138  ; Rise       ; clk                        ;
+;  outY[3]           ; clk                        ; 7.487  ; 7.487  ; Rise       ; clk                        ;
+; outZ[*]            ; clk                        ; 10.203 ; 10.203 ; Rise       ; clk                        ;
+;  outZ[0]           ; clk                        ; 10.203 ; 10.203 ; Rise       ; clk                        ;
+;  outZ[1]           ; clk                        ; 8.110  ; 8.110  ; Rise       ; clk                        ;
+;  outZ[2]           ; clk                        ; 8.307  ; 8.307  ; Rise       ; clk                        ;
+;  outZ[3]           ; clk                        ; 8.340  ; 8.340  ; Rise       ; clk                        ;
+; outPC[*]           ; clk                        ; 9.287  ; 9.287  ; Fall       ; clk                        ;
+;  outPC[1]          ; clk                        ; 9.028  ; 9.028  ; Fall       ; clk                        ;
+;  outPC[2]          ; clk                        ; 8.086  ; 8.086  ; Fall       ; clk                        ;
+;  outPC[3]          ; clk                        ; 9.287  ; 9.287  ; Fall       ; clk                        ;
++--------------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                               ;
++--------------------+----------------------------+--------+--------+------------+----------------------------+
+; Data Port          ; Clock Port                 ; Rise   ; Fall   ; Clock Edge ; Clock Reference            ;
++--------------------+----------------------------+--------+--------+------------+----------------------------+
+; memoryFunction[*]  ; Memory:blockMemory|func[0] ; 4.825  ;        ; Rise       ; Memory:blockMemory|func[0] ;
+;  memoryFunction[0] ; Memory:blockMemory|func[0] ; 4.825  ;        ; Rise       ; Memory:blockMemory|func[0] ;
+; outULA[*]          ; Memory:blockMemory|func[0] ; 11.538 ; 11.538 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[0]         ; Memory:blockMemory|func[0] ; 11.714 ; 11.714 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[1]         ; Memory:blockMemory|func[0] ; 12.344 ; 12.344 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[2]         ; Memory:blockMemory|func[0] ; 11.538 ; 11.538 ; Rise       ; Memory:blockMemory|func[0] ;
+;  outULA[3]         ; Memory:blockMemory|func[0] ; 13.198 ; 13.198 ; Rise       ; Memory:blockMemory|func[0] ;
+; tULA               ; Memory:blockMemory|func[0] ; 11.072 ; 11.072 ; Rise       ; Memory:blockMemory|func[0] ;
+; tX[*]              ; Memory:blockMemory|func[0] ; 10.370 ; 10.370 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tX[0]             ; Memory:blockMemory|func[0] ; 10.370 ; 10.370 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tX[1]             ; Memory:blockMemory|func[0] ; 11.237 ; 11.237 ; Rise       ; Memory:blockMemory|func[0] ;
+; tY[*]              ; Memory:blockMemory|func[0] ; 11.232 ; 11.232 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tY[0]             ; Memory:blockMemory|func[0] ; 11.232 ; 11.232 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tY[1]             ; Memory:blockMemory|func[0] ; 11.438 ; 11.438 ; Rise       ; Memory:blockMemory|func[0] ;
+; tZ[*]              ; Memory:blockMemory|func[0] ; 10.445 ; 10.445 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tZ[0]             ; Memory:blockMemory|func[0] ; 10.445 ; 10.445 ; Rise       ; Memory:blockMemory|func[0] ;
+;  tZ[1]             ; Memory:blockMemory|func[0] ; 11.720 ; 11.720 ; Rise       ; Memory:blockMemory|func[0] ;
+; memoryFunction[*]  ; Memory:blockMemory|func[0] ;        ; 4.825  ; Fall       ; Memory:blockMemory|func[0] ;
+;  memoryFunction[0] ; Memory:blockMemory|func[0] ;        ; 4.825  ; Fall       ; Memory:blockMemory|func[0] ;
+; memoryFunction[*]  ; PC:blockPC|out[0]          ; 11.644 ; 11.644 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryFunction[1] ; PC:blockPC|out[0]          ; 11.644 ; 11.644 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryFunction[2] ; PC:blockPC|out[0]          ; 11.719 ; 11.719 ; Rise       ; PC:blockPC|out[0]          ;
+; memoryValue[*]     ; PC:blockPC|out[0]          ; 10.764 ; 10.764 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryValue[1]    ; PC:blockPC|out[0]          ; 10.764 ; 10.764 ; Rise       ; PC:blockPC|out[0]          ;
+;  memoryValue[2]    ; PC:blockPC|out[0]          ; 10.805 ; 10.805 ; Rise       ; PC:blockPC|out[0]          ;
+; outPC[*]           ; PC:blockPC|out[0]          ; 4.153  ;        ; Rise       ; PC:blockPC|out[0]          ;
+;  outPC[0]          ; PC:blockPC|out[0]          ; 4.153  ;        ; Rise       ; PC:blockPC|out[0]          ;
+; outPC[*]           ; PC:blockPC|out[0]          ;        ; 4.153  ; Fall       ; PC:blockPC|out[0]          ;
+;  outPC[0]          ; PC:blockPC|out[0]          ;        ; 4.153  ; Fall       ; PC:blockPC|out[0]          ;
+; outULA[*]          ; clk                        ; 10.766 ; 10.766 ; Rise       ; clk                        ;
+;  outULA[0]         ; clk                        ; 12.325 ; 12.325 ; Rise       ; clk                        ;
+;  outULA[1]         ; clk                        ; 12.518 ; 12.518 ; Rise       ; clk                        ;
+;  outULA[2]         ; clk                        ; 13.658 ; 13.658 ; Rise       ; clk                        ;
+;  outULA[3]         ; clk                        ; 10.766 ; 10.766 ; Rise       ; clk                        ;
+; outX[*]            ; clk                        ; 8.065  ; 8.065  ; Rise       ; clk                        ;
+;  outX[0]           ; clk                        ; 8.424  ; 8.424  ; Rise       ; clk                        ;
+;  outX[1]           ; clk                        ; 8.065  ; 8.065  ; Rise       ; clk                        ;
+;  outX[2]           ; clk                        ; 8.065  ; 8.065  ; Rise       ; clk                        ;
+; outY[*]            ; clk                        ; 7.487  ; 7.487  ; Rise       ; clk                        ;
+;  outY[0]           ; clk                        ; 9.764  ; 9.764  ; Rise       ; clk                        ;
+;  outY[1]           ; clk                        ; 9.974  ; 9.974  ; Rise       ; clk                        ;
+;  outY[2]           ; clk                        ; 8.138  ; 8.138  ; Rise       ; clk                        ;
+;  outY[3]           ; clk                        ; 7.487  ; 7.487  ; Rise       ; clk                        ;
+; outZ[*]            ; clk                        ; 8.110  ; 8.110  ; Rise       ; clk                        ;
+;  outZ[0]           ; clk                        ; 10.203 ; 10.203 ; Rise       ; clk                        ;
+;  outZ[1]           ; clk                        ; 8.110  ; 8.110  ; Rise       ; clk                        ;
+;  outZ[2]           ; clk                        ; 8.307  ; 8.307  ; Rise       ; clk                        ;
+;  outZ[3]           ; clk                        ; 8.340  ; 8.340  ; Rise       ; clk                        ;
+; outPC[*]           ; clk                        ; 8.086  ; 8.086  ; Fall       ; clk                        ;
+;  outPC[1]          ; clk                        ; 9.028  ; 9.028  ; Fall       ; clk                        ;
+;  outPC[2]          ; clk                        ; 8.086  ; 8.086  ; Fall       ; clk                        ;
+;  outPC[3]          ; clk                        ; 9.287  ; 9.287  ; Fall       ; clk                        ;
++--------------------+----------------------------+--------+--------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                     ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; clk                        ; clk                        ; 48       ; 0        ; 0        ; 12       ;
+; Memory:blockMemory|func[0] ; clk                        ; 42       ; 0        ; 0        ; 0        ;
+; PC:blockPC|out[0]          ; clk                        ; 2        ; 0        ; 4        ; 4        ;
+; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 5        ; 5        ; 0        ; 0        ;
+; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 11       ; 0        ; 0        ; 0        ;
+; clk                        ; PC:blockPC|out[0]          ; 0        ; 6        ; 0        ; 0        ;
+; PC:blockPC|out[0]          ; PC:blockPC|out[0]          ; 3        ; 3        ; 0        ; 0        ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                      ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; From Clock                 ; To Clock                   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+; clk                        ; clk                        ; 48       ; 0        ; 0        ; 12       ;
+; Memory:blockMemory|func[0] ; clk                        ; 42       ; 0        ; 0        ; 0        ;
+; PC:blockPC|out[0]          ; clk                        ; 2        ; 0        ; 4        ; 4        ;
+; Memory:blockMemory|func[0] ; Memory:blockMemory|func[0] ; 5        ; 5        ; 0        ; 0        ;
+; PC:blockPC|out[0]          ; Memory:blockMemory|func[0] ; 11       ; 0        ; 0        ; 0        ;
+; clk                        ; PC:blockPC|out[0]          ; 0        ; 6        ; 0        ; 0        ;
+; PC:blockPC|out[0]          ; PC:blockPC|out[0]          ; 3        ; 3        ; 0        ; 0        ;
++----------------------------+----------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 31    ; 31   ;
+; Unconstrained Output Port Paths ; 50    ; 50   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Tue Dec 13 19:19:53 2016
+Info: Command: quartus_sta CPU -c CPU
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 11 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'CPU.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name Memory:blockMemory|func[0] Memory:blockMemory|func[0]
+    Info (332105): create_clock -period 1.000 -name PC:blockPC|out[0] PC:blockPC|out[0]
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.508
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.508             -74.523 clk 
+    Info (332119):    -5.324             -30.306 Memory:blockMemory|func[0] 
+    Info (332119):    -3.647             -11.381 PC:blockPC|out[0] 
+Info (332146): Worst-case hold slack is -3.990
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.990              -9.615 PC:blockPC|out[0] 
+    Info (332119):    -3.065             -13.562 Memory:blockMemory|func[0] 
+    Info (332119):    -1.230              -3.838 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.500               0.000 Memory:blockMemory|func[0] 
+    Info (332119):     0.500               0.000 PC:blockPC|out[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 586 megabytes
+    Info: Processing ended: Tue Dec 13 19:19:55 2016
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

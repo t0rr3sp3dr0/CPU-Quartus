@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -6.508
+TNS   : -74.523
+
+Type  : Setup 'Memory:blockMemory|func[0]'
+Slack : -5.324
+TNS   : -30.306
+
+Type  : Setup 'PC:blockPC|out[0]'
+Slack : -3.647
+TNS   : -11.381
+
+Type  : Hold 'PC:blockPC|out[0]'
+Slack : -3.990
+TNS   : -9.615
+
+Type  : Hold 'Memory:blockMemory|func[0]'
+Slack : -3.065
+TNS   : -13.562
+
+Type  : Hold 'clk'
+Slack : -1.230
+TNS   : -3.838
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Memory:blockMemory|func[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'PC:blockPC|out[0]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
